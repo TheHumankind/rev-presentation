@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<a href="https://reactjs.org/">
+						<img src="./examples/assets/react.png" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</a>
+					<h3>React</h3>
+					<p>
+						<small>Created by <a href="https://thehumankind.github.io/rsschool-cv">Hurin Vlad</a> for <a href="https://rs.school">RS SCHOOL</a></small>
+					</p>
+				</section>
+				<section>
+					<h2>History</h2>
+					<p>React was created by Jordan Walke</p>
+					<p>It was influenced by XHP, a component HTML framework for PHP.</p>
+				</section>
+				<section>
+					<section>
+						<h2>Usage</h2>
+						<p>The most common use of React is when building a single page application. </p>
+						<p>Its goal is to provide high development speed, simplicity and scalability.</p>
+					</section>
+					<section>
+						<h2>Usage</h2>
+						<p>As a library for developing user interfaces, React is often used with other libraries such as MobX, Redux, and GraphQL.</p>
+					</section>
+				</section>
+				<section>
+					<h2>React features</h2>
+					<p class="fragment">
+						React uses JSX preprocessor.
+					</p>
+					<p class="fragment">
+						Reconciliation algorithm.
+					</p>
+					<p class="fragment">
+						VDOM
+					</p>
+				</section>
+				<section data-visibility="hidden">
+					<h2>Hidden Slides</h2>
+					<p>
+						This slide is visible in the source, but hidden when the presentation is viewed. You can show all hidden slides by setting the `showHiddenSlides` config option to `true`.
+					</p>
+				</section>
+				<section data-auto-animate>
+					<section>
+						<h2>JSX</h2>
+						<p>JSX is, something between JS and HTML.</p>
+					</section>
+					<section>
+						<h2>Simple example</h2>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							const element = <h1>Hello, world</h1>;
+						</code></pre>
+					</section>
+					<section>
+						<h2>Simple example</h2>
+						<p>It will be transform to this code</p>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							"use strict"
+							const element = React.createElement("h1", null, "Hello world!");
+						</code></pre>
+					</section>
+					<section>
+						<h2>Simple example</h2>
+						<p>Also you can insert any attributes in bracese inside a JSX expression</p>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							const newID = "hello"
+							const element = <h1 id="{newID}">Hello, world</h1>;
+						</code></pre>
+					</section>
+				</section>
+				<section data-auto-animate>
+						<h2>Reconciliation algorithm</h2>
+						<p>React uses a special algorithm that allows you to track changes in the user interface and change only it, and not the entire application.</p>
+				</section>
+				<section>
+					<section>
+						<h2>VDOM</h2>
+						<p>
+							Virtual DOM (VDOM) is a programming concept in which an ideal or “virtual” representation of a user interface is stored in memory and synchronized with the “real” DOM using a library such as ReactDOM.
+						</p>
+					</section>
+					<section>
+						<h2>Why VDOM?</h2>
+						<p>
+							The purpose of the virtual tree in React is very simple. you do not need to store all the settings for each node, instead you store its "light" version.
+						</p>
+					</section>
+				</section>
+				<section data-auto-animate>
+					<section>
+						<h2>ELEMENT</h2>
+						<p class="fragment">
+							Smallest block of React application.
+						</p>
+						<p class="fragment">
+							Describe what will be disblayed on the screen.
+						</p>
+						<p class="fragment">
+							Easy to create
+						</p>
+						<p class="fragment">
+							React element are immutable
+						</p>
+					</section>
+					<section>
+						<h2>Simple example</h2>
+						<p class="fragment">
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+								const element = <h1>Hello, world</h1>;
+							</code></pre>
+						</p>
+					</section>
+				</section>
+				<section data-auto-animate>
+					<h2>Element Rendering</h2>
+					<p class="fragment">
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							<!-- You need to create DOM Element -->
+							<div id="root"></div>
+							<!-- After that you call React render method  -->
+							const element = <h1>Hello, world</h1>;
+							ReactDOM.render(element, document.getElementById('root'))
+						</code></pre>
+					</p>
+				</section>
+				<section data-auto-animate>
+					<section>
+						<h2>Componets</h2>
+						<p>
+							Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. 
+						</p>
+						<img src="./examples/assets/components.jpg" alt="reveal.js logo" style="height: 280px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</section>
+					<section>
+						<h2>Componets representation</h2>
+						<h5 style="color:rgba(232, 255, 129, 0.9)">You can represent it like function</h5>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							function Welcome(props) {
+								return <h1>Hello, {props.name}</h1>;
+							}
+						</code></pre>
+						<h5 style="color:rgba(232, 255, 129, 0.9)">or class</h5>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+							class Welcome extends React.Component {
+								render() {
+								  return <h1>Hello, {this.props.name}</h1>;
+								}
+							}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Function components</h2>
+						<p>Should be used only when we need to render some part of UI</p>
+					</section>
+					<section>
+						<h2>Class components</h2>
+						<p>Should be used when component is more complex</p>
+					</section>
+					<section>
+						<h2>Component props</h2>
+						<pre><code data-trim>const element = &lt;Welcome name="Mark" />;</code></pre>
+					<p>This attribute will be specified to the component in this.props:</p>
+					<pre><code data-trim>
+						class Welcome extends React.Component {
+							render() {
+									return <h1>Hello, {this.props.name}</h1>;
+							}}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h1>Outcome</h1>
+					<p>Easy to integrate with other framework</p>
+					<p>JSX and VDOW increases application perfomance and code readability</p>
+					<p>Can be rendered on server and client</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
